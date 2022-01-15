@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
 
     headerText:{
         color:'wheat',
-        fontSize:18
+        fontSize:18,
+        fontFamily:'open-sans-bold'
     }
 
 })

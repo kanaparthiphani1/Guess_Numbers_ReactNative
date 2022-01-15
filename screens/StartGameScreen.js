@@ -39,7 +39,7 @@ const StartGameScreen = props => {
                 <View>
                     <NumberContainer>{selectedNumber}</NumberContainer>
                 </View>
-                <Button title='Start'/>
+                <Button title='Start' onPress={()=>{props.setUserNumber(selectedNumber)}}/>
             </Card>)
     }
 
@@ -78,10 +78,10 @@ const styles = StyleSheet.create({
 
     heading:{
         fontSize: 19,
-        fontWeight: '700',
         paddingTop:8,
         paddingBottom:8,
-        marginBottom: 20
+        marginBottom: 20,
+        fontFamily:'open-sans-bold'
     },
 
     inputCont:{
