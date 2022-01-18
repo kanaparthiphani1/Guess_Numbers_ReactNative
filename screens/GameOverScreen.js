@@ -1,5 +1,6 @@
 import React from 'react'
 import {View,Text,StyleSheet, Button,Image} from 'react-native'
+import CustomButton from '../components/CustomButon'
 
 const GameOverScreen = props =>{
     return(
@@ -9,7 +10,8 @@ const GameOverScreen = props =>{
                 <Image style={styles.image} resizeMode='cover' source={require('../assets/success.png')} />
             </View>
             <Text style={styles.finalWord}>Your phone requires <Text style={styles.highlight}>{props.numberOfRounds}</Text> to predict <Text style={styles.highlight}>{props.userChoice}</Text></Text>
-            <Button title='Start Again' onPress={props.newGameHandler}/>   
+            {/* <Button title='Start Again' onPress={props.newGameHandler}/>    */}
+            <CustomButton action={props.newGameHandler}>Start Again</CustomButton>
         </View>
     )
 }
@@ -48,7 +50,6 @@ const styles = StyleSheet.create({
         fontFamily:'open-sans-bold',
         fontSize:28,
         color:'red'
-
 
     }
 

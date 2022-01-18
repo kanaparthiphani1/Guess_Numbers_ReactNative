@@ -2,6 +2,7 @@ import React ,{useState} from 'react'
 import {View,Text,StyleSheet,TextInput,Button,TouchableWithoutFeedback,Keyboard,Alert} from 'react-native'
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes'
 import Card from '../components/Card'
+import CustomButton from '../components/CustomButon'
 import Input from '../components/Input'
 import NumberContainer from '../components/NumberContainer'
 import colors from '../constants/colors'
@@ -32,6 +33,11 @@ const StartGameScreen = props => {
         Keyboard.dismiss()
     }
 
+    const settingUserNumber = () =>{
+        const {setUserNumber} = props 
+        setUserNumber(selectedNumber)
+    }
+
     let enteredText;
     if(confirmed){
         enteredText = (<Card style={styles.selectedCard}>
@@ -39,7 +45,8 @@ const StartGameScreen = props => {
                 <View>
                     <NumberContainer>{selectedNumber}</NumberContainer>
                 </View>
-                <Button title='Start' onPress={()=>{props.setUserNumber(selectedNumber)}}/>
+                {/* <Button title='Start' onPress={()=>{props.setUserNumber(selectedNumber)}}/> */}
+                <CustomButton style={styles.startButton} action={settingUserNumber}>Start Game</CustomButton>
             </Card>)
     }
 
@@ -109,8 +116,7 @@ const styles = StyleSheet.create({
         paddingTop:8,
         paddingBottom:8,
         justifyContent:'space-between',
-        alignItems:'center',
-        
+        alignItems:'center', 
     },
 
     input:{
@@ -133,6 +139,10 @@ const styles = StyleSheet.create({
         marginTop:20,
         padding:10,
         paddingTop:5
+    },
+    startButton:{
+        marginVertical:10,
+        
     }
 
 
