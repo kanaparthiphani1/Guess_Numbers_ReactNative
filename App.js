@@ -51,7 +51,7 @@ export default function App() {
     appScreen = <StartGameScreen setUserNumber={setUserNumber}/>
   }
 
-  appScreen  = <GameOverScreen numberOfRounds={1} userChoice={1} newGameHandler={newGameHandler}/>
+  //appScreen  = <GameOverScreen numberOfRounds={1} userChoice={1} newGameHandler={newGameHandler}/>
 
   return (
     <View style={styles.screen}>

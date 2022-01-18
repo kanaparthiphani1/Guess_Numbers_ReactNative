@@ -4,12 +4,11 @@ import {View,Text,StyleSheet, Button,Image} from 'react-native'
 const GameOverScreen = props =>{
     return(
         <View style={styles.screen}>
-            <Text>Game Over</Text>
+            <Text style={styles.head}>Game Over</Text>
             <View style={styles.imageCont}>
                 <Image style={styles.image} resizeMode='cover' source={require('../assets/success.png')} />
             </View>
-            <Text>Number Chosen : {props.userChoice}</Text>
-            <Text>Number of Rounds : {props.numberOfRounds}</Text>
+            <Text style={styles.finalWord}>Your phone requires <Text style={styles.highlight}>{props.numberOfRounds}</Text> to predict <Text style={styles.highlight}>{props.userChoice}</Text></Text>
             <Button title='Start Again' onPress={props.newGameHandler}/>   
         </View>
     )
@@ -34,6 +33,23 @@ const styles = StyleSheet.create({
     image:{
         width:'100%',
         height:'100%'
+    },
+
+    highlight:{
+        color:'red'
+    },
+    finalWord:{
+        fontFamily:'open-sans-bold',
+        fontSize:16,
+        marginVertical:15
+
+    },
+    head:{
+        fontFamily:'open-sans-bold',
+        fontSize:28,
+        color:'red'
+
+
     }
 
 
